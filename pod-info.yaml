@@ -20,7 +20,7 @@ kind: Deployment
 metadata:
   name: pod-info
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: pod-info
@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: pod-info
-          image: andriktr/pod-info
+          image: andriktr/pod-info:0.1.0
           ports:
             - containerPort: 8080
               name: http
