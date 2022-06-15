@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -13,7 +14,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	var podIp string = os.Getenv("POD_IP")
 	var podNamespace string = os.Getenv("POD_NAMESPACE")
 	var podServiceAccount string = os.Getenv("POD_SERVICE_ACCOUNT")
+	currentTime := time.Now()
 
+	fmt.Fprintf(w, "Time: %s\n", currentTime.Format(time.UnixDate))
 	fmt.Fprintf(w, "Pod Name: %s\n", podName)
 	fmt.Fprintf(w, "Pod IP: %s\n", podIp)
 	fmt.Fprintf(w, "Node Name: %s\n", nodeName)

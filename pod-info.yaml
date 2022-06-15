@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: pod-info
-          image: andriktr/pod-info:0.1.0
+          image: andriktr/pod-info:0.2.0
           ports:
             - containerPort: 8080
               name: http
