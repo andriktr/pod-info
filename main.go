@@ -9,6 +9,8 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
+	var appVersion string = "0.3.0"
+
 	var podName string = os.Getenv("POD_NAME")
 	var nodeName string = os.Getenv("NODE_NAME")
 	var podIp string = os.Getenv("POD_IP")
@@ -17,6 +19,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	currentTime := time.Now()
 
 	fmt.Fprintf(w, "Time: %s\n", currentTime.Format("01-02-2006 15:04:05 Monday"))
+	fmt.Fprintf(w, "Application version: %s\n", appVersion)
 	fmt.Fprintf(w, "Pod Name: %s\n", podName)
 	fmt.Fprintf(w, "Pod IP: %s\n", podIp)
 	fmt.Fprintf(w, "Node Name: %s\n", nodeName)
