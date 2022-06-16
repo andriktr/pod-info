@@ -16,7 +16,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	var podServiceAccount string = os.Getenv("POD_SERVICE_ACCOUNT")
 	currentTime := time.Now()
 
-	fmt.Fprintf(w, "Time: %s\n", currentTime.Format(time.UnixDate))
+	fmt.Fprintf(w, "Time: %s\n", currentTime.Format("01-02-2006 15:04:05 Monday"))
 	fmt.Fprintf(w, "Pod Name: %s\n", podName)
 	fmt.Fprintf(w, "Pod IP: %s\n", podIp)
 	fmt.Fprintf(w, "Node Name: %s\n", nodeName)
